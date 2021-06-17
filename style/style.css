@@ -29,7 +29,7 @@ nav ul,
 #team,
 #works,
 .person .socialMedia,
-#testemonials .bubbles,
+#testemonials .carouselCircles,
 footer .informations,
 footer .information .socialMedia {
     display: flex;
@@ -282,7 +282,7 @@ button {
     font-size: 0.7em;
     font-weight: bold;
 }
-#testemonials .bubbles {
+#testemonials .carouselCircles {
     height: 50px;
     width: 100px;
     margin: 0 auto;
@@ -293,14 +293,14 @@ button {
 
     bottom: 20%;
 }
-#testemonials .bubbles .bubble {
+#testemonials .carouselCircles .carouselCircle {
     height: 15px;
     width: 15px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.226);
     cursor: pointer;
 }
-#testemonials .bubbles .bubble.active {
+#testemonials .carouselCircles .carouselCircle.active {
     background: white;
 }
 

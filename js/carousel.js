@@ -2,8 +2,10 @@ const quote = document.querySelector('q');
 const author = document.querySelector('.author');
 const carouselImg = document.getElementById('carouselImg');
 
-const bubblesContainer = document.querySelector('.bubbles');
-const bubbles = document.getElementsByClassName('bubble');
+const carouselCirclesContainer = document.querySelector('.carouselCircles');
+const carouselCircles = document.getElementsByClassName('carouselCircle');
+
+let counter = 0;
 
 const DUMMY_DATA = [
     {
@@ -25,37 +27,57 @@ const DUMMY_DATA = [
         jobTitle: 'Narod',
     },
 ];
+
 quote.innerText = DUMMY_DATA[0].quote;
 author.innerText = `${DUMMY_DATA[0].author}, ${DUMMY_DATA[0].jobTitle}`;
 carouselImg.src = `${DUMMY_DATA[0].img}`;
 
 DUMMY_DATA.forEach((element) => {
     let div = document.createElement('div');
-    div.classList.add('bubble');
-    bubblesContainer.appendChild(div);
+    div.classList.add('carouselCircle');
+    carouselCirclesContainer.appendChild(div);
 });
 
-bubbles[0].classList.add('active');
+carouselCircles[0].classList.add('active');
 
 const classRemover = () => {
-    for (let i = 0; i < bubbles.length; i++) {
-        bubbles[i].classList.remove('active');
+    for (let i = 0; i < carouselCircles.length; i++) {
+        carouselCircles[i].classList.remove('active');
     }
 };
 
 document.addEventListener('click', (event) => {
     if (
-        event.target.classList.contains('bubble') &&
+        event.target.classList.contains('carouselCircle') &&
         !event.target.classList.contains('active')
     ) {
         classRemover();
         event.target.classList.add('active');
-        for (let i = 0; i < bubbles.length; i++) {
-            if (bubbles[i].classList.contains('active')) {
+        for (let i = 0; i < carouselCircles.length; i++) {
+            if (carouselCircles[i].classList.contains('active')) {
                 quote.innerText = DUMMY_DATA[i].quote;
                 author.innerText = `${DUMMY_DATA[i].author}, ${DUMMY_DATA[i].jobTitle}`;
                 carouselImg.src = `${DUMMY_DATA[i].img}`;
+                counter = i;
             }
         }
     }
 });
+
+const automaticalSlideChange = () => {
+    const changeCarouselContent = () => {
+        quote.innerText = DUMMY_DATA[counter].quote;
+        author.innerText = `${DUMMY_DATA[counter].author}, ${DUMMY_DATA[0].jobTitle}`;
+        carouselImg.src = `${DUMMY_DATA[counter].img}`;
+        classRemover();
+        carouselCircles[counter].classList.add('active');
+        counter++;
+        if (counter === DUMMY_DATA.length) {
+            counter = 0;
+        }
+    };
+
+    let timer = setInterval(changeCarouselContent, 4000);
+};
+
+automaticalSlideChange();
