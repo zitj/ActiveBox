@@ -1,3 +1,9 @@
+:root {
+    --activeBoxRed: #e84546;
+    --activeBoxRedTransparent: #e84545cc;
+    --activeBoxLogo: rgb(141, 143, 167);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -17,9 +23,48 @@ header {
     width: 1100px;
     margin: 0 auto;
 }
+nav,
+nav ul,
+#features,
+#team,
+#works,
+.person .socialMedia,
+#testemonials .bubbles,
+footer .informations,
+footer .information .socialMedia {
+    display: flex;
+}
+nav .logo h2,
+nav ul li a:hover,
+.heroText,
+button,
+.work .project,
+#testemonials,
+footer,
+.copyright p:nth-child(2) span,
+footer .information .socialMedia a {
+    color: white;
+}
+button:hover,
+footer .information .socialMedia a:hover {
+    opacity: 0.7;
+}
+button:active,
+footer .information .socialMedia a:active,
+.work:hover > .project,
+.work:active > .project {
+    opacity: 1;
+}
+#features,
+#team,
+#works,
+.footer .informations {
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 nav {
     position: relative;
-    display: flex;
     justify-content: space-between;
     padding: 0em 0em 0.5em 0em;
 }
@@ -32,19 +77,16 @@ nav hr {
     border: none;
     background-color: rgba(141, 143, 167, 0.493);
 }
-nav ul {
-    display: flex;
-}
+
 nav .logo h2 {
     padding: 1em 2em 1em 0.2em;
     font-size: 2em;
     margin: 0;
     font-weight: 200;
-    color: white;
 }
 nav .logo h2 span {
     font-weight: 900;
-    color: rgb(141, 143, 167);
+    color: var(--activeBoxLogo);
 }
 nav ul {
     list-style: none;
@@ -52,7 +94,6 @@ nav ul {
 }
 nav ul li {
     margin: 0;
-
     padding: 1.5em 0.5em 1.5em 0.5em;
 }
 nav ul li a {
@@ -64,9 +105,7 @@ nav ul li a {
     font-weight: 600;
     font-size: 0.8em;
 }
-nav ul li a:hover {
-    color: white;
-}
+
 nav ul li a:active {
     color: rgb(206, 206, 206);
 }
@@ -76,7 +115,6 @@ nav ul li a:active {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
 }
 .heroText h1 {
     text-align: center;
@@ -94,10 +132,9 @@ nav ul li a:active {
     line-height: 35px;
 }
 button {
-    background: #e84546;
+    background: var(--activeBoxRed);
     text-transform: uppercase;
     font-family: 'Raleway', sans-serif;
-    color: white;
     border: none;
     padding: 1em 4.5em;
     cursor: pointer;
@@ -105,16 +142,8 @@ button {
     border-radius: 2px;
     outline: none;
 }
-button:hover {
-    opacity: 0.9;
-}
-button:active {
-    opacity: 1;
-}
+
 #features {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
     padding: 4em 0em 0em;
     margin: auto 0;
 }
@@ -132,11 +161,7 @@ button:active {
     font-size: 0.9em;
     text-align: center;
 }
-#works {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+
 .work {
     cursor: pointer;
     position: relative;
@@ -147,15 +172,10 @@ button:active {
     position: absolute;
     opacity: 0;
     transition: 0.2s ease-in-out;
-    background: #e84545cc;
+    background: var(--activeBoxRedTransparent);
     height: 99%;
     width: 100%;
-    color: white;
     text-align: center;
-}
-.work:hover > .project,
-.work:active > .project {
-    opacity: 1;
 }
 
 .work img {
@@ -172,11 +192,7 @@ button:active {
     text-transform: uppercase;
     font-weight: bold;
 }
-#team {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+
 .person {
     width: 22%;
 }
@@ -194,13 +210,12 @@ button:active {
     font-size: 0.75em;
     margin-top: 5px;
     text-transform: uppercase;
-    color: #cf0303;
+    color: var(--activeBoxRed);
 }
 .person .biography {
     font-size: 0.9em;
 }
 .person .socialMedia {
-    display: flex;
     width: 60%;
     justify-content: space-around;
     margin-top: 2em;
@@ -228,7 +243,6 @@ button:active {
     position: relative;
     height: 35vh;
     margin-bottom: 3em;
-    color: white;
 }
 #testemonials .text,
 #testemonials .picture {
@@ -272,7 +286,6 @@ button:active {
     height: 50px;
     width: 100px;
     margin: 0 auto;
-    display: flex;
     justify-content: space-around;
     align-items: center;
 }
@@ -280,12 +293,13 @@ button:active {
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.486);
+    background: rgba(255, 255, 255, 0.226);
     cursor: pointer;
 }
 #testemonials .bubbles .bubble.active {
     background: white;
 }
+
 #download {
     text-align: center;
 }
@@ -301,25 +315,20 @@ button:active {
     margin-bottom: 3em;
 }
 footer {
-    color: white;
     background: #3a3e63;
-    padding: 6em 6em 8em;
+    padding: 6em 10em 8em;
 }
 footer address {
     font-style: normal;
 }
-footer .informations {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+
 footer .information {
-    width: 30%;
+    width: 50%;
     text-align: center;
 }
 
 footer .information p {
-    color: rgba(255, 255, 255, 0.568);
+    color: var(--activeBoxLogo);
 }
 footer .information p:nth-child(1) {
     color: white;
@@ -327,7 +336,6 @@ footer .information p:nth-child(1) {
     text-transform: uppercase;
 }
 footer .information .socialMedia {
-    display: flex;
     justify-content: space-around;
     align-items: center;
     margin: 0 auto;
@@ -337,7 +345,6 @@ footer .information .socialMedia {
 }
 
 footer .information .socialMedia a {
-    color: white;
     padding: 0.4em 0.7em;
     border: 2px solid white;
 }
@@ -349,13 +356,11 @@ footer .information .socialMedia a:active {
 }
 footer .information:nth-child(3) p:nth-child(2) {
     font-size: 0.8em;
+    line-height: 20px;
 }
 .copyright {
     color: rgba(170, 170, 170, 0.733);
     padding: 1.5em;
     text-align: center;
     background: #313455;
-}
-.copyright p:nth-child(2) span {
-    color: white;
 }
