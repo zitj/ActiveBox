@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+header {
+    background-image: url('../img/header/hero.jpg');
+    height: 80vh;
+}
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 0em 0.5em 0em;
+}
+nav hr {
+    position: absolute;
+    width: 96%;
+    bottom: 0%;
+    left: 1.75%;
+    height: 1px;
+    border: none;
+    background-color: rgba(141, 143, 167, 0.493);
+}
+nav ul {
+    display: flex;
+}
+nav .logo h2 {
+    padding: 1em 2em 1em 0.2em;
+    font-size: 2em;
+    margin: 0;
+    font-weight: 200;
+    color: white;
+}
+nav .logo h2 span {
+    font-weight: 900;
+    color: rgb(141, 143, 167);
+}
+nav ul {
+    list-style: none;
+    justify-content: space-around;
+}
+nav ul li {
+    margin: 0;
+
+    padding: 1.5em 0.5em 1.5em 0.5em;
+}
+nav ul li a {
+    padding: 1em;
+    color: rgb(206, 206, 206);
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+nav ul li a:hover {
+    color: white;
+}
+nav ul li a:active {
+    color: rgb(206, 206, 206);
+}
+.heroText {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+.heroText h1 {
+    text-align: center;
+    font-size: 3.66em;
+    text-transform: uppercase;
+    font-family: 'OpenSans', sans-serif;
+    padding: 0em 0.2em;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+.heroText p {
+    font-weight: 300;
+    font-size: 1.3em;
+    margin-bottom: 4em;
+}
+button {
+    background: #e84546;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    border: none;
+    padding: 1.2em 3.5em;
+    cursor: pointer;
+    transition: 0.1s;
+    border-radius: 2px;
+}
+button:hover {
+    opacity: 0.9;
+}
+button:active {
+    opacity: 1;
+}
