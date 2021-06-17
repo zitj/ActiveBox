@@ -127,3 +127,43 @@ button:active {
     font-size: 0.9em;
     text-align: center;
 }
+#works {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2em 0 8em;
+}
+.work {
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s ease-in-out;
+}
+
+.work .project {
+    position: absolute;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    background: #e84545cc;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+.work:hover > .project,
+.work:active > .project {
+    opacity: 1;
+}
+
+.work img {
+    width: 430px;
+}
+.project .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.75em;
+}
+.project .text h3 {
+    text-transform: uppercase;
+}
