@@ -234,7 +234,7 @@ button {
 }
 
 .person .socialMedia .link a:hover {
-    color: #e84546;
+    color: var(--activeBoxRed);
 }
 .person .socialMedia .link a:active {
     color: rgba(128, 128, 128, 0.541);
@@ -253,7 +253,7 @@ button {
 #testemonials .text {
     right: 0;
     width: 50%;
-    background: #523549;
+    background: #313455;
 }
 #testemonials .quote {
     position: absolute;
@@ -288,6 +288,10 @@ button {
     margin: 0 auto;
     justify-content: space-around;
     align-items: center;
+    position: absolute;
+    left: 40%;
+
+    bottom: 20%;
 }
 #testemonials .bubbles .bubble {
     height: 15px;
