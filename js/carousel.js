@@ -4,6 +4,7 @@ const carouselImg = document.getElementById('carouselImg');
 const carouselElements = [quote, author, carouselImg];
 
 const hamburger = document.getElementById('hamburger');
+const backToTop = document.getElementById('backToTop');
 const navigation = document.querySelector('ul');
 
 const carouselCirclesContainer = document.querySelector('.carouselCircles');
@@ -112,5 +113,11 @@ const automaticalSlideChange = () => {
 hamburger.addEventListener('click', () => {
     navigation.classList.toggle('active');
 });
-
+window.addEventListener('scroll', (event) => {
+    if (window.pageYOffset >= 100) {
+        backToTop.classList.add('active');
+    } else {
+        backToTop.classList.remove('active');
+    }
+});
 // automaticalSlideChange();
