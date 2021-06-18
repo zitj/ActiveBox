@@ -24,6 +24,19 @@ header {
     width: 1100px;
     margin: 0 auto;
 }
+
+/* #btnPrev,
+#btnNext {
+    position: absolute;
+    bottom: 0%;
+    z-index: 250000;
+}
+#btnPrev {
+    left: 30%;
+}
+#btnNext {
+    right: 30%;
+} */
 #backToTop,
 #hamburger {
     height: 50px;
@@ -326,16 +339,16 @@ button {
 }
 #testemonials .picture {
     left: 0;
+    /* overflow: hidden; */
+}
+#imgContainer {
+    position: absolute;
+    width: 750px;
+    height: 500px;
     overflow: hidden;
 }
-#testemonials .picture img {
-    position: absolute;
-    left: 0%;
-}
-#testemonials .picture img.fadeIn,
-#testemonials q.fadeIn,
-#testemonials .author.fadeIn {
-    animation: fadeIn 1s ease-in-out;
+#imgSlider {
+    display: flex;
 }
 
 #testemonials q {
@@ -436,15 +449,6 @@ footer .information:nth-child(3) p:nth-child(2) {
     background: #313455;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 @media (max-width: 1450px) {
     .wrapper,
     #works {
@@ -470,12 +474,15 @@ footer .information:nth-child(3) p:nth-child(2) {
         margin: 0 auto;
     }
     #testemonials .picture img {
-        left: -25%;
+        margin-left: -10%;
     }
 }
 @media (max-width: 1280px) {
     footer {
         padding: 6em 4em 6em 4em;
+    }
+    #testemonials .picture img {
+        margin-left: -15%;
     }
 }
 @media (max-width: 1200px) {
@@ -501,6 +508,9 @@ footer .information:nth-child(3) p:nth-child(2) {
     }
     .person .socialMedia {
         width: 45%;
+    }
+    #testemonials .picture img {
+        margin-left: -25%;
     }
 }
 @media (max-width: 1050px) {
@@ -551,9 +561,7 @@ footer .information:nth-child(3) p:nth-child(2) {
     #testemonials .carousel .text {
         width: 100%;
     }
-    #testemonials .picture img {
-        left: 0%;
-    }
+
     #testemonials .carousel .text {
         background: #313455de;
     }
@@ -566,6 +574,9 @@ footer .information:nth-child(3) p:nth-child(2) {
     #testemonials .carousel .text .carouselCircles {
         bottom: 10%;
         left: 44%;
+    }
+    #testemonials .picture img {
+        margin-left: 1.5%;
     }
 }
 @media (max-width: 850px) {
@@ -632,7 +643,7 @@ footer .information:nth-child(3) p:nth-child(2) {
         width: 70%;
     }
     #testemonials .picture img {
-        left: -20%;
+        margin-left: -5%;
     }
     footer {
         padding-left: 0;
@@ -696,8 +707,7 @@ footer .information:nth-child(3) p:nth-child(2) {
         font-size: 3em;
     }
     #testemonials .carousel .picture img {
-        left: -30%;
-        top: -10%;
+        margin-left: -15%;
     }
 }
 @media (max-width: 500px) {
@@ -732,8 +742,7 @@ footer .information:nth-child(3) p:nth-child(2) {
         width: 50%;
     }
     #testemonials .carousel .picture img {
-        left: -50%;
-        top: -10%;
+        margin-left: -20%;
     }
     #testemonials .carousel .text .quote {
         width: 80%;
@@ -769,20 +778,22 @@ footer .information:nth-child(3) p:nth-child(2) {
         height: 350vh;
     }
     #testemonials .carousel .picture img {
-        left: -70%;
-        top: -20%;
+        margin-left: -35%;
+        margin-top: -10%;
     }
     #testemonials .carousel .text .quote q {
         font-size: 2.5em;
     }
 }
-@media (max-width: 380px) {
+@media (max-width: 384px) {
     #testemonials .carousel .text .quote q {
         font-size: 2em;
     }
     #testemonials .carousel .picture img {
-        left: -80%;
+        margin-left: -50%;
+        margin-top: -15%;
     }
+
     #team {
         height: 390vh;
     }
@@ -806,8 +817,8 @@ footer .information:nth-child(3) p:nth-child(2) {
     }
 
     #testemonials .carousel .picture img {
-        left: -120%;
-        top: -20%;
+        margin-left: -60%;
+        margin-top: -20%;
     }
     #testemonials .carousel .text .carouselCircles {
         left: 35%;
