@@ -1,38 +1,14 @@
-const quote = document.querySelector('q');
-const author = document.querySelector('.author');
-const carouselImg = document.getElementById('carouselImg');
-const carouselElements = [quote, author, carouselImg];
-
-const hamburger = document.getElementById('hamburger');
-const backToTop = document.getElementById('backToTop');
-const navigation = document.querySelector('ul');
-
-const carouselCirclesContainer = document.querySelector('.carouselCircles');
-const carouselCircles = document.getElementsByClassName('carouselCircle');
+import {
+    quote,
+    author,
+    carouselImg,
+    carouselCirclesContainer,
+    carouselCircles,
+} from './vars.js';
+import { DUMMY_DATA } from '../data/dummy_data.js';
 
 let counter = 0;
 let interuptor = false;
-
-const DUMMY_DATA = [
-    {
-        img: 'img/carousel/carousel-2.jpg',
-        quote: 'Nesto tamo nesto',
-        author: 'Aleksandar Veljkovic',
-        jobTitle: 'Frontend developer',
-    },
-    {
-        img: 'img/carousel/carousel-1.jpg',
-        quote: 'Sibi imperare maximum imperium est',
-        author: 'Ciceron',
-        jobTitle: 'Philosopher',
-    },
-    {
-        img: 'img/carousel/carousel-3.jpg',
-        quote: 'Ko rano rani, dve srece grabi!',
-        author: 'Narodna izreka',
-        jobTitle: 'Narod',
-    },
-];
 
 carouselImg.classList.add('fadeIn');
 
@@ -43,6 +19,7 @@ carouselImg.src = `${DUMMY_DATA[0].img}`;
 DUMMY_DATA.forEach((element) => {
     let div = document.createElement('div');
     div.classList.add('carouselCircle');
+    div.classList.add('noSelect');
     carouselCirclesContainer.appendChild(div);
 });
 
@@ -83,14 +60,12 @@ document.addEventListener('click', (event) => {
     }
 });
 
-const automaticalSlideChange = () => {
-    console.log(interuptor);
+export const automaticalSlideChange = () => {
     const changeCarouselContent = () => {
         quote.innerText = DUMMY_DATA[counter].quote;
         author.innerText = `${DUMMY_DATA[counter].author}, ${DUMMY_DATA[counter].jobTitle}`;
         carouselImg.src = `${DUMMY_DATA[counter].img}`;
         classRemover();
-        console.log(interuptor);
 
         setTimeout(() => {
             carouselImg.classList.add('fadeIn');
@@ -110,14 +85,4 @@ const automaticalSlideChange = () => {
     let timer = setInterval(changeCarouselContent, 2000);
 };
 
-hamburger.addEventListener('click', () => {
-    navigation.classList.toggle('active');
-});
-window.addEventListener('scroll', (event) => {
-    if (window.pageYOffset >= 100) {
-        backToTop.classList.add('active');
-    } else {
-        backToTop.classList.remove('active');
-    }
-});
 // automaticalSlideChange();

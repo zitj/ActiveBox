@@ -12,7 +12,7 @@
         />
         <link rel="stylesheet" href="style/style.css" />
 
-        <script src="js/carousel.js" defer></script>
+        <script src="js/app.js" type="module" defer></script>
         <script
             src="https://kit.fontawesome.com/61587eb6c5.js"
             crossorigin="anonymous"
@@ -20,12 +20,12 @@
         <title>ActiveBox</title>
     </head>
     <body>
-        <div id="backToTop">
-            <a href="#"><i class="fas fa-arrow-up"></i></a>
+        <div id="backToTop" class="noSelect">
+            <i class="fas fa-arrow-up"></i>
         </div>
         <!-- HEADER SECTION -->
         <header>
-            <div id="hamburger" class="hamburger">
+            <div id="hamburger" class="noSelect">
                 <i class="fas fa-hamburger"></i>
             </div>
             <nav>
@@ -53,7 +53,7 @@
                     Praesent commodo cursus magna vel scelerisque nisl
                     consectetur et.
                 </p>
-                <button>Find out more</button>
+                <button class="noSelect">Find out more</button>
             </div>
             <!-- end .heroText-->
             <!-- end .wrapper -->
@@ -365,7 +365,7 @@
         <section id="download">
             <p>Are You Ready to Start? Download Now For Free!</p>
             <p>fusce dapibus, tellus ac cursus commodo</p>
-            <button>Download here</button>
+            <button class="noSelect">Download here</button>
         </section>
         <footer>
             <div class="wrapper">

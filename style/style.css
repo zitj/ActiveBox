@@ -12,6 +12,7 @@ body {
     padding: 0;
     font-family: 'Raleway', sans-serif;
 }
+
 section {
     padding: 7em 0;
 }
@@ -29,8 +30,9 @@ header {
     width: 50px;
     background: var(--activeBoxRed);
     border-radius: 3px;
-    transition: 0.15s;
+    transition: 0.1s;
     transform: rotateZ(0deg) rotateX(0deg);
+    cursor: pointer;
 }
 #backToTop {
     position: fixed;
@@ -40,6 +42,7 @@ header {
     right: 5%;
     transform-origin: bottom;
 }
+
 #backToTop.active {
     opacity: 0.9;
     z-index: 25;
@@ -65,9 +68,18 @@ header {
     transform: rotateZ(15deg) rotateX(45deg);
 }
 #backToTop:active {
-    transform: rotateZ(0deg) rotateX(-70deg);
+    transform: rotateZ(0deg) rotateX(-30deg);
 }
-
+.noSelect,
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 nav,
 nav ul,
 #features,
@@ -707,6 +719,9 @@ footer .information:nth-child(3) p:nth-child(2) {
         width: 100%;
         margin-bottom: 15px;
     }
+    .work .project {
+        height: 91%;
+    }
     #team {
         height: 280vh;
     }
@@ -814,5 +829,8 @@ footer .information:nth-child(3) p:nth-child(2) {
     }
     #testemonials .carousel .text .quote q {
         font-size: 1.8em;
+    }
+    .work .project {
+        height: 87%;
     }
 }
