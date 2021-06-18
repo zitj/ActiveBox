@@ -34,7 +34,7 @@ const classRemover = () => {
 };
 
 const imageSliderFunction = () => {
-    imgSlider.style.transition = `transform .4s ease-in-out`;
+    imgSlider.style.transition = `transform .2s ease-in-out`;
     imgSlider.style.transform =
         'translateX(' + -images[0].clientWidth * newCounter + 'px';
     newCounter++;
