@@ -330,7 +330,7 @@ button {
 }
 #testemonials .picture img {
     position: absolute;
-    left: -5%;
+    left: 0%;
 }
 #testemonials .picture img.fadeIn,
 #testemonials q.fadeIn,
