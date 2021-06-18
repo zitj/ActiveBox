@@ -14,19 +14,23 @@ let imgSlider = imgContainer.querySelector('#imgSlider');
 quote.innerText = DUMMY_DATA[0].quote;
 author.innerText = `${DUMMY_DATA[0].author}, ${DUMMY_DATA[0].jobTitle}`;
 
+// "Load data for testemonials"
 DUMMY_DATA.forEach((element) => {
+    //add carousel circles
     let div = document.createElement('div');
     div.classList.add('carouselCircle');
     div.classList.add('noSelect');
     carouselCirclesContainer.appendChild(div);
+
+    //add images to container
     let image = document.createElement('img');
     image.src = `${element.img}`;
     imgSlider.appendChild(image);
 });
 
-carouselCircles[0].classList.add('active');
-
 let images = imgSlider.querySelectorAll('img');
+
+carouselCircles[0].classList.add('active');
 
 const classRemover = () => {
     for (let i = 0; i < carouselCircles.length; i++) {
@@ -55,7 +59,7 @@ export const automaticalSlideChange = () => {
         classRemover();
         setTimeout(() => {
             imageSlide();
-        }, 2000);
+        }, 2200);
         carouselCircles[counter].classList.add('active');
         counter++;
         if (counter === DUMMY_DATA.length) {
@@ -63,5 +67,5 @@ export const automaticalSlideChange = () => {
         }
     };
 
-    let timer = setInterval(changeCarouselContent, 2000);
+    let timer = setInterval(changeCarouselContent, 2200);
 };
