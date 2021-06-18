@@ -25,18 +25,6 @@ header {
     margin: 0 auto;
 }
 
-/* #btnPrev,
-#btnNext {
-    position: absolute;
-    bottom: 0%;
-    z-index: 250000;
-}
-#btnPrev {
-    left: 30%;
-}
-#btnNext {
-    right: 30%;
-} */
 #backToTop,
 #hamburger {
     height: 50px;
@@ -71,11 +59,17 @@ header {
 #hamburger i,
 #backToTop i {
     font-size: 2em;
+    color: white;
+}
+#hamburger i,
+#backToTop i,
+.heroText,
+.project .text,
+#testemonials .quote {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: white;
 }
 #hamburger:active {
     transform: rotateZ(15deg) rotateX(45deg);
@@ -184,10 +178,7 @@ nav ul li a:active {
     color: rgb(206, 206, 206);
 }
 .heroText {
-    position: absolute;
     top: 43%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
     width: 70%;
 }
@@ -257,10 +248,6 @@ button {
     width: 430px;
 }
 .project .text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 0.75em;
 }
 .project .text .projectTitle {
@@ -331,15 +318,10 @@ button {
     background: #313455;
 }
 #testemonials .quote {
-    position: absolute;
     width: 70%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 #testemonials .picture {
     left: 0;
-    /* overflow: hidden; */
 }
 #imgContainer {
     position: absolute;

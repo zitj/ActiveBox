@@ -23,6 +23,7 @@ DUMMY_DATA.forEach((element) => {
     image.src = `${element.img}`;
     imgSlider.appendChild(image);
 });
+
 carouselCircles[0].classList.add('active');
 
 let images = imgSlider.querySelectorAll('img');
@@ -33,7 +34,7 @@ const classRemover = () => {
     }
 };
 
-const imageSliderFunction = () => {
+const imageSlide = () => {
     imgSlider.style.transition = `transform .2s ease-in-out`;
     imgSlider.style.transform =
         'translateX(' + -images[0].clientWidth * newCounter + 'px';
@@ -47,34 +48,14 @@ const imageSliderFunction = () => {
     }
 };
 
-// document.addEventListener('click', (event) => {
-//     if (
-//         event.target.classList.contains('carouselCircle') &&
-//         !event.target.classList.contains('active')
-//     ) {
-
-//         classRemover();
-
-//         event.target.classList.add('active');
-//         for (let i = 0; i < carouselCircles.length; i++) {
-//             if (carouselCircles[i].classList.contains('active')) {
-//                 quote.innerText = DUMMY_DATA[i].quote;
-//                 author.innerText = `${DUMMY_DATA[i].author}, ${DUMMY_DATA[i].jobTitle}`;
-
-//                 counter = i;
-//             }
-//         }
-//     }
-// });
-
 export const automaticalSlideChange = () => {
     const changeCarouselContent = () => {
         quote.innerText = DUMMY_DATA[counter].quote;
         author.innerText = `${DUMMY_DATA[counter].author}, ${DUMMY_DATA[counter].jobTitle}`;
         classRemover();
         setTimeout(() => {
-            imageSliderFunction();
-        }, 3000);
+            imageSlide();
+        }, 2000);
         carouselCircles[counter].classList.add('active');
         counter++;
         if (counter === DUMMY_DATA.length) {
@@ -82,5 +63,5 @@ export const automaticalSlideChange = () => {
         }
     };
 
-    let timer = setInterval(changeCarouselContent, 3000);
+    let timer = setInterval(changeCarouselContent, 2000);
 };
