@@ -23,6 +23,32 @@ header {
     width: 1100px;
     margin: 0 auto;
 }
+#hamburger {
+    display: none;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    background: var(--activeBoxRed);
+    right: 12%;
+    top: 30px;
+    border-radius: 3px;
+    z-index: 100;
+    transition: 0.15s ease-in-out;
+    transform-origin: top;
+    transform: rotateZ(0deg) rotateX(0deg);
+}
+#hamburger i {
+    font-size: 2em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+#hamburger:active {
+    transform: rotateZ(15deg) rotateX(45deg);
+}
+
 nav,
 nav ul,
 #features,
@@ -64,6 +90,8 @@ footer .information .socialMedia a:active,
 }
 
 nav {
+    margin: 0 auto;
+    width: 80%;
     position: relative;
     justify-content: space-between;
     padding: 0em 0em 0.5em 0em;
@@ -94,7 +122,7 @@ nav ul {
 }
 nav ul li {
     margin: 0;
-    padding: 1.5em 0.5em 1.5em 0.5em;
+    padding: 0em 0.5em 0em 0.5em;
 }
 nav ul li a {
     padding: 1em;
@@ -104,6 +132,8 @@ nav ul li a {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 0.8em;
+    line-height: 80px;
+    padding: 1.5em 0.5em 1.5em 0.5em;
 }
 
 nav ul li a:active {
@@ -115,6 +145,7 @@ nav ul li a:active {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    width: 70%;
 }
 .heroText h1 {
     text-align: center;
@@ -271,6 +302,12 @@ button {
     top: -8%;
     left: -5%;
 }
+#testemonials .picture img.fadeIn,
+#testemonials q.fadeIn,
+#testemonials .author.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+}
+
 #testemonials q {
     font-family: 'Cardo', serif;
     font-size: 2.5em;
@@ -367,4 +404,215 @@ footer .information:nth-child(3) p:nth-child(2) {
     padding: 1.5em;
     text-align: center;
     background: #313455;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1450px) {
+    .wrapper,
+    #works {
+        width: 1000px;
+    }
+
+    header {
+        height: 65vh;
+    }
+    .heroText {
+        top: 35%;
+        width: 70%;
+    }
+    .heroText h1 {
+        font-size: 2.8em;
+    }
+    #features {
+        margin-top: 4em;
+        height: 70vh;
+    }
+    #works {
+        padding-top: 0;
+        margin: 0 auto;
+    }
+    #testemonials .picture img {
+        top: -5%;
+        left: -25%;
+    }
+}
+@media (max-width: 1280px) {
+    footer {
+        padding: 6em 4em 6em 4em;
+    }
+}
+@media (max-width: 1200px) {
+    .wrapper {
+        width: 800px;
+    }
+    nav ul li {
+        padding: 0;
+    }
+}
+@media (max-width: 1100px) {
+    #works {
+        width: 800px;
+    }
+    .work img {
+        width: 390px;
+    }
+    #team {
+        height: 100vh;
+    }
+    .person {
+        width: 40%;
+    }
+    .person .socialMedia {
+        width: 45%;
+    }
+}
+@media (max-width: 980px) {
+    .wrapper {
+        width: 700px;
+    }
+    .heroText {
+        width: 80%;
+    }
+    #hamburger {
+        display: block;
+    }
+    nav ul {
+        display: block;
+        position: absolute;
+        right: 2%;
+        border-radius: 3px;
+        opacity: 0;
+        transform: scale(0) rotateZ(-35deg) rotateY(-90deg);
+        transform-origin: top;
+        z-index: -21;
+        padding: 0.5em 3em;
+        text-align: center;
+        top: 65%;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.514);
+        background: var(--activeBoxRed);
+        transition: 0.2s ease-in-out;
+    }
+    nav ul.active {
+        z-index: 21;
+        opacity: 1;
+        transform: scale(1) rotateZ(0deg) rotateY(0deg);
+    }
+
+    nav ul li {
+        border-bottom: 1px solid black;
+    }
+    nav ul li:nth-child(5) {
+        border: none;
+    }
+    nav hr {
+        display: none;
+    }
+    .person .socialMedia {
+        width: 50%;
+    }
+    #testemonials .carousel .picture,
+    #testemonials .carousel .text {
+        width: 100%;
+    }
+    #testemonials .picture img {
+        top: -5%;
+        left: 0%;
+    }
+    #testemonials .carousel .text {
+        background: #313455de;
+    }
+    #testemonials .carousel .text .quote {
+        width: 55%;
+    }
+    #testemonials .carousel .text .quote q {
+        font-size: 4em;
+    }
+    #testemonials .carousel .text .carouselCircles {
+        bottom: 10%;
+        left: 44%;
+    }
+}
+@media (max-width: 850px) {
+    .wrapper,
+    #works {
+        width: 600px;
+    }
+    .heroText h1 {
+        font-size: 2.5em;
+    }
+    #features {
+        height: 100vh;
+    }
+    .feature {
+        width: 40%;
+    }
+    .work img {
+        width: 290px;
+    }
+    .person .socialMedia {
+        width: 60%;
+    }
+    #testemonials .carousel .text .quote {
+        width: 60%;
+    }
+}
+@media (max-width: 770px) {
+    .wrapper,
+    #works,
+    #download {
+        width: 500px;
+    }
+    #download {
+        margin: 0 auto;
+    }
+    .work img {
+        width: 240px;
+    }
+    .person .socialMedia {
+        width: 72%;
+    }
+    .informations {
+        flex-wrap: wrap;
+    }
+    #testemonials .carousel .text .quote {
+        width: 70%;
+    }
+    #testemonials .picture img {
+        top: -5%;
+        left: -20%;
+    }
+    footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    footer .information {
+        width: 80%;
+        margin: 2em auto;
+    }
+    footer .information p:nth-child(1) {
+        font-size: 1.5em;
+    }
+    footer .information p,
+    footer .information:nth-child(3) p:nth-child(2) {
+        font-size: 1.3em;
+    }
+
+    footer .information:nth-child(3) p:nth-child(2) {
+        line-height: 30px;
+    }
+    footer .information .socialMedia {
+        width: 300px;
+        margin-top: 40px;
+    }
+    footer .information .socialMedia a {
+        font-size: 1.6em;
+    }
 }

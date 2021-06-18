@@ -1,11 +1,16 @@
 const quote = document.querySelector('q');
 const author = document.querySelector('.author');
 const carouselImg = document.getElementById('carouselImg');
+const carouselElements = [quote, author, carouselImg];
+
+const hamburger = document.getElementById('hamburger');
+const navigation = document.querySelector('ul');
 
 const carouselCirclesContainer = document.querySelector('.carouselCircles');
 const carouselCircles = document.getElementsByClassName('carouselCircle');
 
 let counter = 0;
+let interuptor = false;
 
 const DUMMY_DATA = [
     {
@@ -28,6 +33,8 @@ const DUMMY_DATA = [
     },
 ];
 
+carouselImg.classList.add('fadeIn');
+
 quote.innerText = DUMMY_DATA[0].quote;
 author.innerText = `${DUMMY_DATA[0].author}, ${DUMMY_DATA[0].jobTitle}`;
 carouselImg.src = `${DUMMY_DATA[0].img}`;
@@ -44,6 +51,14 @@ const classRemover = () => {
     for (let i = 0; i < carouselCircles.length; i++) {
         carouselCircles[i].classList.remove('active');
     }
+
+    if (interuptor) {
+        setTimeout(() => {
+            interuptor = false;
+        }, 2000);
+    } else {
+        carouselImg.classList.remove('fadeIn');
+    }
 };
 
 document.addEventListener('click', (event) => {
@@ -51,7 +66,10 @@ document.addEventListener('click', (event) => {
         event.target.classList.contains('carouselCircle') &&
         !event.target.classList.contains('active')
     ) {
+        interuptor = true;
+
         classRemover();
+
         event.target.classList.add('active');
         for (let i = 0; i < carouselCircles.length; i++) {
             if (carouselCircles[i].classList.contains('active')) {
@@ -65,19 +83,34 @@ document.addEventListener('click', (event) => {
 });
 
 const automaticalSlideChange = () => {
+    console.log(interuptor);
     const changeCarouselContent = () => {
         quote.innerText = DUMMY_DATA[counter].quote;
-        author.innerText = `${DUMMY_DATA[counter].author}, ${DUMMY_DATA[0].jobTitle}`;
+        author.innerText = `${DUMMY_DATA[counter].author}, ${DUMMY_DATA[counter].jobTitle}`;
         carouselImg.src = `${DUMMY_DATA[counter].img}`;
         classRemover();
+        console.log(interuptor);
+
+        setTimeout(() => {
+            carouselImg.classList.add('fadeIn');
+        }, 2000);
+
         carouselCircles[counter].classList.add('active');
         counter++;
         if (counter === DUMMY_DATA.length) {
             counter = 0;
         }
     };
+    const complete = () => {
+        clearInterval(timer);
+        timer = null;
+    };
 
-    let timer = setInterval(changeCarouselContent, 4000);
+    let timer = setInterval(changeCarouselContent, 2000);
 };
 
-automaticalSlideChange();
+hamburger.addEventListener('click', () => {
+    navigation.classList.toggle('active');
+});
+
+// automaticalSlideChange();
